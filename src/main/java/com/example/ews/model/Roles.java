@@ -1,14 +1,24 @@
 package com.example.ews.model;
 
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Roles {
 
 	@Id
+	@GeneratedValue
 	private int rid;
 	private String roleName;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+	@JsonIgnore
+	private Employee employee;
 	
 	public Roles() {
 		
@@ -27,6 +37,14 @@ public class Roles {
 
 	public void setRoleName(String roleName) {
 		this.roleName = roleName;
+	}
+
+	public Employee getEmployee() {
+		return employee;
+	}
+
+	public void setEmployee(Employee employee) {
+		this.employee = employee;
 	}
 
 	@Override

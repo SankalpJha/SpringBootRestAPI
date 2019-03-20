@@ -1,7 +1,7 @@
 # SpringBootRestAPI Project
 
 This is a basic spring boot web project required for beginners.
-This spring-boot application is basic implementation of what you can do with SPRING.
+This spring-boot application is basic implementation of what you can do with SPRING BOOT.
 
 ## Prerequsites
 
@@ -13,8 +13,10 @@ This project has implementation of below features:
 * Spring-boot
 * RESTful API
 * H2-JPA Implementation
-* SSL Implementation
+* Exception Handling
 * Basic Authentication or Spring Security
+* HATEOAS Implementation
+* Swagger Documentation
 
 ### Required Tools
 * Java 1.8+
@@ -28,16 +30,15 @@ This project has implementation of below features:
 * Use Postman to hit APIs
 
 ### Future Enhancement
-* Adding Swagger for documentation.
 * Logging Mechanism
 * JWT Implementation
-* Exception Handling
+
 
 ### Description
 
-This is a very basic project having employees of an organization with different roles. Anyone can view the list of employees but only user with proper role is able to add new employee to the organization. We can also view the employee details with his/her perticular employee id.    
-From abvove it is clear that we have atleast **3 rest end points**, one with all the employees details, single employee details and last one adding  new employees. We have secured the last end point with basic authentication and rest of the 2 are open to all.  
-RESTful web service have a controller `EmployeeController` which is mapped to the URI's and this controller uses a service `EmployeeController` to perform CRUD operations. CRUD operations are performed via `EmployeeRepo` interface using model of `Employee` and `Roles` as Entity.  
+This is a very basic project having employees of an organization with different roles. Anyone can view the list of employees but only user with proper role is able to add new employee to the organization. We can also view the employee details with his/her perticular employee id.
+From abvove it is clear that we have atleast **5 rest end points**, one with all the employees details, single employee details, adding  new employees. We can add role for exsisting employee and retrive the list of roles for a single employee. We can secured the rest end points with basic authentication but the spring secuurity code in POM.xml is commented out. Application.propeties file do contain userName and password.
+RESTful web service have a controller `EmployeeController` which is mapped to the URI's and this controller uses a service `EmployeeController` to perform CRUD operations. CRUD operations are performed via `EmployeeRepo` interface using model of `Employee` and `Roles` as Entity.
 
 
 ### Folder/Package Structure
@@ -45,4 +46,5 @@ RESTful web service have a controller `EmployeeController` which is mapped to th
 2. Service
 3. Repository/DAO
 4. Model
-5. Configuration	
+5. Configuration
+6. Exception

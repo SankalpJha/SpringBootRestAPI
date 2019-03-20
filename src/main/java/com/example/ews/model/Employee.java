@@ -6,17 +6,32 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Size;
+
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
 @Entity
+@ApiModel(description="Employee Details")
 public class Employee {
 
 	@Id
 	@GeneratedValue
 	private int eid;
+	
+	@Size(min=2, message="Name should have atleast 2 characters")
+	@ApiModelProperty(notes="Name should have atleast 2 characters")
 	private String eName;
+	
+	@Digits(integer = 10, message="Salary should be integer value", fraction = 0)
+	@ApiModelProperty(dataType="Salary should be Integer")
 	private int salary;
+	
 	private String teamName;
-	@OneToMany
+	
+	@ApiModelProperty(notes="An employee can have multiple roles")
+	@OneToMany(mappedBy="employee")
 	private List<Roles> roles;
 	
 	public Employee() {
