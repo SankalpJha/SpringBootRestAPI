@@ -18,7 +18,7 @@ public class Roles {
 	
 	@ManyToOne(fetch=FetchType.LAZY)
 	@JsonIgnore
-	private Employee employee;
+	private Employee Employee;
 	
 	public Roles() {
 		
@@ -39,12 +39,8 @@ public class Roles {
 		this.roleName = roleName;
 	}
 
-	public Employee getEmployee() {
-		return employee;
-	}
-
 	public void setEmployee(Employee employee) {
-		this.employee = employee;
+		this.Employee = employee;
 	}
 
 	@Override

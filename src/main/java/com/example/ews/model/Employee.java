@@ -2,6 +2,7 @@ package com.example.ews.model;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,7 +32,7 @@ public class Employee {
 	private String teamName;
 	
 	@ApiModelProperty(notes="An employee can have multiple roles")
-	@OneToMany(mappedBy="employee")
+	@OneToMany(mappedBy="Employee")
 	private List<Roles> roles;
 	
 	public Employee() {
