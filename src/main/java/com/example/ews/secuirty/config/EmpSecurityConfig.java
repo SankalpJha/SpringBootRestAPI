@@ -10,13 +10,12 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableOAuth2Client;
 
 @Configuration
 @EnableWebSecurity
 public class EmpSecurityConfig extends WebSecurityConfigurerAdapter{
 
-	/*@Autowired
+	@Autowired
 	private UserDetailsService adminDetailsService;
 	
 	@Bean
@@ -28,7 +27,7 @@ public class EmpSecurityConfig extends WebSecurityConfigurerAdapter{
 		authProvider.setPasswordEncoder(new BCryptPasswordEncoder());
 		
 		return authProvider;
-	}*/
+	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
